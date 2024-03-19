@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador</title>
+
+    <!--preload-->
+    <link rel="preload" href="normalize.css" as="style" />
+    <link rel="stylesheet" href="normalize.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&family=Victor+Mono&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="preload" href="styles.css" as="style" />
+    <link rel='stylesheet' href='styles.css' />
+    
+
+
+
+</head>
+
+
+<body>
+
+    <header>
+        <div class="caja-candado">
+            <h1> <img src="img/candado.png" alt="candado encriptador"></h1>
+        </div>
+    </header>
+
+    <main>
+        <ul class="encriptador">
+            <li>
+                <textarea class="cajadetexto" name="" id="textoEncriptar" cols="30" rows="10"
+                    placeholder="Ingrese el texto aquí"></textarea>
+                <p><img class="signo" src="img/signo-de-exclamacion.png" alt="Signo de exclamación"> Solo letras
+                    min&uacute;sculas y sin acentos</p>
+                <button  onclick="Intentoencriptar()" id="encriptar">Encriptar</button>
+                <button  onclick="IntentoDesencriptar()" id="desencriptar">Desencriptar</button>
+                <button onclick="borrar()" id="borrar">Borrar</button>
+            </li>
+
+            <li class="Mensaje">
+                <textarea class="cajadetexto" name="" id="mensajeEncriptar" cols="30" rows="10" placeholder=""></textarea>
+                <div id="con-mensaje" >
+                <img class="imagen-respuesta" " src="img/Big Shoes - Torso.png" alt="Persona con computadora"  >
+                <h3 >Ningún mensaje fue encontrado</h3>
+            </div>
+                <p id="resultado-mostrar">Ingresa el texto que desea encriptar o desencriptar.</p>
+            
+                <button onclick="copiar()" id="copiar">Copiar</button>
+
+            </li>
+        </ul>
+
+        <footer>
+            <img src="img/candado.png" alt="candado encriptador">
+            <p>&copy;Todos los derechos reservados Jorge Ramírez - 2024</p>
+        </footer>
+    </main>
+
+
+<script src="app.js"></script>
+</body>
+
+</html>
