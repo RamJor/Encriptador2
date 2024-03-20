@@ -6,7 +6,7 @@ let copy = document.querySelector('#copiar');
 let lista = document.querySelector('#lista')
 
 //let datos = ''
-let expresion = /^[a-z]+$/
+let expresion = /^[a-z ]+$/
 
 //TextoEncriptar.addEventListener('input', leerTexto);
 
@@ -34,7 +34,7 @@ function Intentoencriptar() {
     document.getElementById('mensajeEncriptar').style.display = 'block';
     MensajeEncriptar.value = texto;
     document.getElementById('con-mensaje').style.display = 'none';
-    Resultado.innerHTML = 'Mensaje encriptado con éxito'
+    Resultado.innerHTML = 'Mensaje encriptado con éxito.'
    console.log(texto);
    }
    
@@ -52,6 +52,7 @@ function borrar(){
   borrarTodos.value = "";
   document.getElementById('mensajeEncriptar').style.display = 'none';
   document.getElementById('con-mensaje').style.display = 'block';
+  Resultado.innerHTML = 'Ingresa el texto que desea encriptar o desencriptar.'
 }
 
 
@@ -69,7 +70,7 @@ function mostrarError (){
 
   setTimeout(() => {
     error.remove();
-  }, 4000);
+  }, 1000);
 }
 
 function IntentoDesencriptar (){

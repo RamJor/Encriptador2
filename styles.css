@@ -67,9 +67,10 @@ button:hover{
 }
 
 .cajadetexto{
-    max-width: 40rem;
+    max-width: 30rem;
     height: 40rem;
     font-size: 2em;
+    margin: 0 auto;
 
 }
 textarea{
