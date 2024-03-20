@@ -2,6 +2,8 @@
 let TextoEncriptar= document.getElementById('textoEncriptar');
 let MensajeEncriptar= document.getElementById('mensajeEncriptar');
 let Resultado = document.getElementById('resultado-mostrar');
+let copy = document.querySelector('#copiar');
+let lista = document.querySelector('#lista')
 
 //let datos = ''
 let expresion = /^[a-z]+$/
@@ -26,7 +28,7 @@ const letrasMatriz = [
 function Intentoencriptar() {
    let texto = encriptar (TextoEncriptar.value);
    if (!expresion.test(texto)) {
-    alert("Solo se admiten letras minusculas sin acentos"); // Dpues de esto tengo que hacer que se borre lo del textarea
+    mostrarError ();
     limpiarcaja();
    } else {
     document.getElementById('mensajeEncriptar').style.display = 'block';
@@ -52,19 +54,29 @@ function borrar(){
   document.getElementById('con-mensaje').style.display = 'block';
 }
 
-function copiar (){
-  let textoAcopiar = document.querySelector('#mensajeEncriptar');
-  let copy = document.querySelector('#copiar');
-  copiar.select();
-  document.execCommand('copy');
 
+copy.addEventListener('click', e => {
+  MensajeEncriptar.select();
+  document.execCommand('copy');
+})
+
+
+function mostrarError (){
+  const error = document.createElement ('P');
+  error.textContent = ("Solo se admiten letras minusculas sin acentos");
+  error.classList.add("error");
+  lista.appendChild(error);
+
+  setTimeout(() => {
+    error.remove();
+  }, 4000);
 }
 
 function IntentoDesencriptar (){
    let textoo= desencriptar (TextoEncriptar.value);
    let texto = encriptar (TextoEncriptar.value);
    if (!expresion.test(textoo)) {
-    alert("Solo se admiten letras minusculas sin acentos"); // Dpues de esto tengo que hacer que se borre lo del textarea
+    mostrarError ();
     limpiarcaja();
    } else {
    
@@ -88,7 +100,7 @@ function encriptar(fraseEncriptar){
 }
 
 function desencriptar(frasedesencriptar){
-  for(let i = letrasMatriz.length - 1; i >= 0; i--){ //  bucle para que lea de atras hacia adelante
+  for(let i = letrasMatriz.length - 1; i >= 0; i--){
     if (frasedesencriptar.includes(letrasMatriz[i][1])) {
       frasedesencriptar = frasedesencriptar.replaceAll (
         letrasMatriz[i][1],

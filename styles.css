@@ -110,6 +110,13 @@ textarea{
 .encriptador p{
     font-size: 1.5rem;
 }
+.error{
+    background-color: rgb(185,0, 0);
+    text-align: center;
+    padding: 1rem;
+    color: azure;
+    text-transform: uppercase;
+}
 
 #encriptar {
     background-color: #6499a898;
